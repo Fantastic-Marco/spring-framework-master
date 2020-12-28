@@ -1,0 +1,6 @@
+org/springframework/reader/bean/Bean1.java
+ org.springframework.reader.bean.Bean1
+org/springframework/reader/bean/Bean2.java
+ org.springframework.reader.bean.Bean2
+org/springframework/reader/MainApplication.java
+ org.springframework.reader.MainApplication

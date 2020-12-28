@@ -1,0 +1,33 @@
+plugins {
+    id 'java'
+}
+
+group 'org.springframework'
+version '5.3.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile(project(":spring-aop")) {
+        exclude group: 'commons-logging', module: 'commons-logging'
+    }
+    compile(project(":spring-beans")) {
+        exclude group: 'commons-logging', module: 'commons-logging'
+    }
+    compile(project(":spring-core")) {
+        exclude group: 'commons-logging', module: 'commons-logging'
+    }
+    compile(project(":spring-expression")) {
+        exclude group: 'commons-logging', module: 'commons-logging'
+    }
+    compile(project(":spring-context")) {
+        exclude group: 'commons-logging', module: 'commons-logging'
+    }
+    // https://mvnrepository.com/artifact/log4j/log4j
+    compile group: 'log4j', name: 'log4j', version: '1.2.17'
+
+}
