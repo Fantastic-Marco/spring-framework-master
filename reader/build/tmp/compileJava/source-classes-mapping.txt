@@ -1,6 +1,14 @@
+org/springframework/reader/listener/MyListener.java
+ org.springframework.reader.listener.MyListener
+org/springframework/reader/bean/IBean.java
+ org.springframework.reader.bean.IBean
+org/springframework/reader/config/ApplicationConfig.java
+ org.springframework.reader.config.ApplicationConfig
+org/springframework/reader/MainApplication.java
+ org.springframework.reader.MainApplication
 org/springframework/reader/bean/Bean1.java
  org.springframework.reader.bean.Bean1
 org/springframework/reader/bean/Bean2.java
  org.springframework.reader.bean.Bean2
-org/springframework/reader/MainApplication.java
- org.springframework.reader.MainApplication
+org/springframework/reader/aspector/MyAspector.java
+ org.springframework.reader.aspector.MyAspector

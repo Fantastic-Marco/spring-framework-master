@@ -15,6 +15,9 @@ dependencies {
     compile(project(":spring-aop")) {
         exclude group: 'commons-logging', module: 'commons-logging'
     }
+    compile(project(":spring-aspects")) {
+        exclude group: 'commons-logging', module: 'commons-logging'
+    }
     compile(project(":spring-beans")) {
         exclude group: 'commons-logging', module: 'commons-logging'
     }

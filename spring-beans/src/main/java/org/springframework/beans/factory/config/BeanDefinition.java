@@ -26,11 +26,12 @@ import org.springframework.lang.Nullable;
  * A BeanDefinition describes a bean instance, which has property values,
  * constructor argument values, and further information supplied by
  * concrete implementations.
- *
+ * Bean定义 描述了一个拥有属性值，构造函数参数值，并且提供具体实现的更多信息的bean实例
  * <p>This is just a minimal interface: The main intention is to allow a
  * {@link BeanFactoryPostProcessor} to introspect and modify property values
  * and other bean metadata.
- *
+ * 这只是一个最小化的接口，主要意图是允许一个 BeanFactoryPostProcessor 去实例化
+ * 并且修改属性值和其他bean元数据
  * @author Juergen Hoeller
  * @author Rob Harrop
  * @since 19.03.2004
@@ -43,6 +44,8 @@ public interface BeanDefinition extends AttributeAccessor, BeanMetadataElement {
 	/**
 	 * Scope identifier for the standard singleton scope: {@value}.
 	 * <p>Note that extended bean factories might support further scopes.
+	 * 标准单例等级
+	 * 需要注意的是拓展的bean工厂可能会支持更多的范围
 	 * @see #setScope
 	 * @see ConfigurableBeanFactory#SCOPE_SINGLETON
 	 */
@@ -51,6 +54,8 @@ public interface BeanDefinition extends AttributeAccessor, BeanMetadataElement {
 	/**
 	 * Scope identifier for the standard prototype scope: {@value}.
 	 * <p>Note that extended bean factories might support further scopes.
+	 * 标准原型等级
+	 * 需要注意的是拓展的bean工厂可能会支持更多的范围
 	 * @see #setScope
 	 * @see ConfigurableBeanFactory#SCOPE_PROTOTYPE
 	 */
@@ -60,6 +65,7 @@ public interface BeanDefinition extends AttributeAccessor, BeanMetadataElement {
 	/**
 	 * Role hint indicating that a {@code BeanDefinition} is a major part
 	 * of the application. Typically corresponds to a user-defined bean.
+	 * 示意这个Bean定义是一个程序的主要部分，特别是对应用户定义的bean
 	 */
 	int ROLE_APPLICATION = 0;
 
@@ -71,6 +77,8 @@ public interface BeanDefinition extends AttributeAccessor, BeanMetadataElement {
 	 * of when looking more closely at a particular
 	 * {@link org.springframework.beans.factory.parsing.ComponentDefinition},
 	 * but not when looking at the overall configuration of an application.
+	 * 示意这个Bean定义是一个大配置，特别是一些外部 ComponentDefinition bean， 在程序在查找所有配置的时候，
+	 * 这个bean定义需要被足够重视并且被察觉
 	 */
 	int ROLE_SUPPORT = 1;
 

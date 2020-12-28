@@ -11,16 +11,17 @@ import javax.annotation.PostConstruct;
  * @date 2020/12/8 下午10:02
  */
 @Component
-public class Bean1 {
-	@Autowired
-	private Bean2 bean;
-
-	public void say(){
-		System.out.println("bean1 say fuck");
-	}
+public class Bean1 implements IBean {
+//	@Autowired
+//	private Bean2 bean;
 
 	@PostConstruct
 	public void afterInit(){
 		System.out.println("bean1 say I am good feeling after init");
+	}
+
+	@Override
+	public void say() {
+		System.out.println("bean1 say fuck");
 	}
 }
