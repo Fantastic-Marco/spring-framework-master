@@ -56,22 +56,36 @@ import org.springframework.util.StringUtils;
  * Base class for transactional aspects, such as the {@link TransactionInterceptor}
  * or an AspectJ aspect.
  *
+ * 这是一个事务切面的基类，例如 {@link TransactionInterceptor} 或者AspectJ 切面
+ *
  * <p>This enables the underlying Spring transaction infrastructure to be used easily
  * to implement an aspect for any aspect system.
  *
+ * 这使得底层的 Spring 事务基础设施可以很容易地用于为任何方面系统实现一个方面。
+ *
  * <p>Subclasses are responsible for calling methods in this class in the correct order.
+ *
+ * 子类负责以正确的顺序调用此类中的方法。
  *
  * <p>If no transaction name has been specified in the {@link TransactionAttribute},
  * the exposed name will be the {@code fully-qualified class name + "." + method name}
  * (by default).
+ *
+ * 如果 {@link TransactionAttribute} 中没有指定事务名称，
+ * 则公开名称将是 {@code 完全限定的类名 + "." + 方法名}（默认）
  *
  * <p>Uses the <b>Strategy</b> design pattern. A {@link PlatformTransactionManager} or
  * {@link ReactiveTransactionManager} implementation will perform the actual transaction
  * management, and a {@link TransactionAttributeSource} (e.g. annotation-based) is used
  * for determining transaction definitions for a particular class or method.
  *
+ * 使用 Strategy 设计模式。 {@link PlatformTransactionManager} 或 {@link ReactiveTransactionManager} 实现将执行实际的事务管理，
+ * {@link TransactionAttributeSource}（例如基于注释的）用于确定特定类或方法的事务定义。
+ *
  * <p>A transaction aspect is serializable if its {@code TransactionManager} and
  * {@code TransactionAttributeSource} are serializable.
+ *
+ * 如果其 {@code TransactionManager} 和 {@code TransactionAttributeSource} 是可序列化的，则事务方面是可序列化的。
  *
  * @author Rod Johnson
  * @author Juergen Hoeller
@@ -325,6 +339,15 @@ public abstract class TransactionAspectSupport implements BeanFactoryAware, Init
 	 * @param invocation the callback to use for proceeding with the target invocation
 	 * @return the return value of the method, if any
 	 * @throws Throwable propagated from the target invocation
+	 *
+	 * 用于围绕建议的子类的一般委托，委托给此类上的其他几个模板方法。
+	 * 能够处理 {@link CallbackPreferringPlatformTransactionManager}
+	 * 以及常规的 {@link PlatformTransactionManager} 实现和 {@link ReactiveTransactionManager} 实现响应式返回类型。
+	 * @param method 被调用的方法
+	 * @param targetClass 我们在调用方法的目标类
+	 * @param invocation 用于继续目标调用的回调
+	 * @return 方法的返回值，如果有的话
+	 * @throws Throwable 从传播目标调用
 	 */
 	@Nullable
 	protected Object invokeWithinTransaction(Method method, @Nullable Class<?> targetClass,

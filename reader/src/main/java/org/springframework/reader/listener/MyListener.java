@@ -14,6 +14,6 @@ public class MyListener implements ApplicationListener<ApplicationEvent> {
 
 	@Override
 	public void onApplicationEvent(ApplicationEvent event) {
-		System.out.println("程序启动啦，我是程序监听器");
+		System.out.println("MyListener: 程序启动啦，我是程序监听器");
 	}
 }

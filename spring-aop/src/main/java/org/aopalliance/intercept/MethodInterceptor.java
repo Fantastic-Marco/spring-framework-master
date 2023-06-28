@@ -54,6 +54,12 @@ public interface MethodInterceptor extends Interceptor {
 	 * might be intercepted by the interceptor
 	 * @throws Throwable if the interceptors or the target object
 	 * throws an exception
+	 *
+	 * 实现此方法以在调用之前和之后执行额外的处理。
+	 * 礼貌的实现肯定会调用 {@link Joinpoint Proceed()}。
+	 * @param invocation 方法调用 joinpoint
+	 * @return 调用结果 {@link Joinpointproceed()};
+	 * @throws Throwable 如果拦截器或目标对象抛出异常，可能会被拦截器拦截
 	 */
 	@Nullable
 	Object invoke(@Nonnull MethodInvocation invocation) throws Throwable;

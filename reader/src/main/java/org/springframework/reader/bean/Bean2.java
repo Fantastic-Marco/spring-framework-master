@@ -8,13 +8,24 @@ import org.springframework.stereotype.Component;
  * @version 1.0
  * @date 2020/12/8 下午10:02
  */
-@Component
-public class Bean2 implements IBean {
+//@Component
+public class Bean2 {
 //	@Autowired
-//	private Bean1 bean;
+//	private Bean2 bean2;
 
-	@Override
-	public void say(){
+	private String word = "200";
+
+	public void say() {
+		System.out.println(word);
 		System.out.println("bean2 say fuck");
+//		System.out.println(bean2.add(1,2));
+	}
+
+	public int add(int x, int y) {
+		return x + y;
+	}
+
+	public void setWord(String word) {
+		this.word = word;
 	}
 }

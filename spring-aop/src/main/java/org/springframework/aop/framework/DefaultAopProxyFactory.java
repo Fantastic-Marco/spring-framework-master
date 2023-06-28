@@ -24,6 +24,7 @@ import org.springframework.aop.SpringProxy;
 /**
  * Default {@link AopProxyFactory} implementation, creating either a CGLIB proxy
  * or a JDK dynamic proxy.
+ * AopProxyFactory 的默认实现类，用于歘关键CGLIB 代理或者 JDK 动态代理
  *
  * <p>Creates a CGLIB proxy if one the following is true for a given
  * {@link AdvisedSupport} instance:

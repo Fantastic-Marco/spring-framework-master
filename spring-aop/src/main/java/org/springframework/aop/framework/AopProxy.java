@@ -21,10 +21,21 @@ import org.springframework.lang.Nullable;
 /**
  * Delegate interface for a configured AOP proxy, allowing for the creation
  * of actual proxy objects.
- *
+ * 配置的 AOP 代理的委托接口，允许创建实际的代理对象。
  * <p>Out-of-the-box implementations are available for JDK dynamic proxies
  * and for CGLIB proxies, as applied by {@link DefaultAopProxyFactory}.
- *
+ * 开箱即用的实现可用于 JDK 动态代理和 CGLIB 代理，由 {@link DefaultAopProxyFactory} 应用
+ * JDK动态代理和CGLib动态代理的不同
+ * JDK动态代理
+ * 		JDK动态代理需要实现invocationHandler接口
+ * 		通过为Proxy类指定ClassLoader对象和一组interface来创建动态代理；
+ *		通过反射机制获取动态代理类的构造函数，其唯一参数类型就是调用处理器接口类型；
+ *		通过构造函数创建动态代理类实例，构造时调用处理器对象作为参数参入；
+ *		JDK动态代理是面向接口的代理模式，如果被代理目标没有接口那么Spring也无能为力，
+ *		Spring通过Java的反射机制生产被代理接口的新的匿名实现类，重写了其中AOP的增强方法。
+ *CGLib代理
+ * 		利用ASM开源包，对代理对象类的class文件加载进来，通过修改其字节码生成子类来处理。
+ * 		CGLib动态代理是通过字节码底层继承要代理类来实现，因此如果被代理类被final关键字所修饰，会失败。
  * @author Rod Johnson
  * @author Juergen Hoeller
  * @see DefaultAopProxyFactory

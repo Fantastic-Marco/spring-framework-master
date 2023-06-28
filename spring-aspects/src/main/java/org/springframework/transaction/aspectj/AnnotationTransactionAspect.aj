@@ -36,6 +36,8 @@ import org.springframework.transaction.annotation.Transactional;
  * Any method may be annotated (regardless of visibility). Annotating
  * non-public methods directly is the only way to get transaction demarcation
  * for the execution of such operations.
+ * 声明式事务切面
+ * 父类实现了around方法
  *
  * @author Rod Johnson
  * @author Ramnivas Laddad

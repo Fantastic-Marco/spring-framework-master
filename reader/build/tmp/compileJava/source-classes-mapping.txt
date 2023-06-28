@@ -1,14 +1,60 @@
-org/springframework/reader/listener/MyListener.java
- org.springframework.reader.listener.MyListener
-org/springframework/reader/bean/IBean.java
- org.springframework.reader.bean.IBean
-org/springframework/reader/config/ApplicationConfig.java
- org.springframework.reader.config.ApplicationConfig
-org/springframework/reader/MainApplication.java
- org.springframework.reader.MainApplication
-org/springframework/reader/bean/Bean1.java
- org.springframework.reader.bean.Bean1
+org/marco/test/MyClassLoader.java
+ org.marco.test.MyClassLoader
+org/springframework/reader/annotation/Record.java
+ org.springframework.reader.annotation.Record
+org/springframework/reader/factory/bean/MyFactoryBean.java
+ org.springframework.reader.factory.bean.MyFactoryBean
 org/springframework/reader/bean/Bean2.java
  org.springframework.reader.bean.Bean2
+org/springframework/reader/aspector/AddAspectory.java
+ org.springframework.reader.aspector.AddAspectory
+org/springframework/reader/dto/SortDto.java
+ org.springframework.reader.dto.SortDto
+org/springframework/reader/bean/Bean3.java
+ org.springframework.reader.bean.Bean3
+org/springframework/reader/bean/Bean5.java
+ org.springframework.reader.bean.Bean5
+org/springframework/reader/invocation/MyInvocation.java
+ org.springframework.reader.invocation.MyInvocation
+org/springframework/reader/processor/beanfactory/MyBeanFactoryPostProcesor.java
+ org.springframework.reader.processor.beanfactory.MyBeanFactoryPostProcesor
+org/springframework/reader/processor/bean/MyBeanPostProcessor.java
+ org.springframework.reader.processor.bean.MyBeanPostProcessor
+org/springframework/reader/aspector/Bean6MethodInterceptor.java
+ org.springframework.reader.aspector.Bean6MethodInterceptor
+org/springframework/reader/bean/IBean.java
+ org.springframework.reader.bean.IBean
+org/springframework/reader/config/IBean1Config.java
+ org.springframework.reader.config.IBean1Config
+org/springframework/reader/bean/MyFactoryBeanPojo.java
+ org.springframework.reader.bean.MyFactoryBeanPojo
+org/springframework/reader/bean/IBean1.java
+ org.springframework.reader.bean.IBean1
+org/springframework/reader/listener/MyListener.java
+ org.springframework.reader.listener.MyListener
+org/marco/MyFactoryBean2.java
+ org.marco.MyFactoryBean2
 org/springframework/reader/aspector/MyAspector.java
  org.springframework.reader.aspector.MyAspector
+org/springframework/reader/bean/Bean1.java
+ org.springframework.reader.bean.Bean1
+org/marco/TestConfig.java
+ org.marco.TestConfig
+org/springframework/reader/bean/Bean4.java
+ org.springframework.reader.bean.Bean4
+org/marco/test/CompleteFurterMain.java
+ org.marco.test.CompleteFurterMain
+org/springframework/reader/config/Bean6Config.java
+ org.springframework.reader.config.Bean6Config
+org/springframework/reader/bean/Bean6.java
+ org.springframework.reader.bean.Bean6
+org/springframework/reader/MainApplication.java
+ org.springframework.reader.MainApplication
+org/springframework/reader/selector/Bean6Selector.java
+ org.springframework.reader.selector.Bean6Selector
+org/springframework/reader/config/ApplicationConfig.java
+ org.springframework.reader.config.ApplicationConfig
+org/springframework/reader/registrar/MyRegistrar.java
+ org.springframework.reader.registrar.MyRegistrar
+org/springframework/reader/config/Bean3Config.java
+ org.springframework.reader.config.Bean3Config

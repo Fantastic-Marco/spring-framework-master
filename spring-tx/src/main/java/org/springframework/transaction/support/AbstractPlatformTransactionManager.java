@@ -342,8 +342,10 @@ public abstract class AbstractPlatformTransactionManager implements PlatformTran
 			throws TransactionException {
 
 		// Use defaults if no transaction definition given.
+		//获取事务定义，事务定义里面声明了事务的隔离级别以及事务超时的市场设定等信息+
 		TransactionDefinition def = (definition != null ? definition : TransactionDefinition.withDefaults());
 
+		//获取事务（子类实现，开启一个事务，例如mysql 执行 begin / start transcation）
 		Object transaction = doGetTransaction();
 		boolean debugEnabled = logger.isDebugEnabled();
 
@@ -395,8 +397,10 @@ public abstract class AbstractPlatformTransactionManager implements PlatformTran
 			boolean debugEnabled, @Nullable SuspendedResourcesHolder suspendedResources) {
 
 		boolean newSynchronization = (getTransactionSynchronization() != SYNCHRONIZATION_NEVER);
+
 		DefaultTransactionStatus status = newTransactionStatus(
 				definition, transaction, true, newSynchronization, debugEnabled, suspendedResources);
+		//开启事务,关闭自动提交
 		doBegin(transaction, definition);
 		prepareSynchronization(status, definition);
 		return status;

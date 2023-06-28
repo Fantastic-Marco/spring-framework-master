@@ -99,14 +99,20 @@ public class ProxyFactory extends ProxyCreatorSupport {
 
 	/**
 	 * Create a new proxy according to the settings in this factory.
+	 * 根据此工厂中的设置创建新代理
 	 * <p>Can be called repeatedly. Effect will vary if we've added
 	 * or removed interfaces. Can add and remove interceptors.
+	 * 可以反复调用。如果我们添加或删除接口，效果会有所不同。可以添加和删除拦截器
 	 * <p>Uses the given class loader (if necessary for proxy creation).
+	 * 使用给定的类加载器（如果需要创建代理）
 	 * @param classLoader the class loader to create the proxy with
 	 * (or {@code null} for the low-level proxy facility's default)
 	 * @return the proxy object
 	 */
 	public Object getProxy(@Nullable ClassLoader classLoader) {
+		//可以看到getProxy方法来自AopProxy,而AopProxy的子类有
+		//JdkDynamicAopProxy
+		//CglibAopProxy
 		return createAopProxy().getProxy(classLoader);
 	}
 

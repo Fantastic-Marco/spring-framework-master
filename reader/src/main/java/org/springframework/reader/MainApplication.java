@@ -1,10 +1,12 @@
 package org.springframework.reader;
 
+import org.marco.TestConfig;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.reader.bean.Bean1;
-import org.springframework.reader.bean.Bean2;
-import org.springframework.reader.bean.IBean;
+import org.springframework.reader.bean.*;
 import org.springframework.reader.config.ApplicationConfig;
+
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 
 /**
@@ -18,10 +20,22 @@ public class MainApplication {
 	public static void main(String[] args) throws Exception {
 		AnnotationConfigApplicationContext applicationContext =
 				new AnnotationConfigApplicationContext(ApplicationConfig.class);
-		IBean bean1 = applicationContext.getBean(Bean1.class);
-		IBean bean2 = applicationContext.getBean(Bean2.class);
-		bean1.say();
+//		IBean bean1 = (IBean) applicationContext.getBean("bean1");
+//		IBean bean2 = (IBean) applicationContext.getBean("bean2");
+		Bean2 bean2 = applicationContext.getBean(Bean2.class);
+//		Bean3 bean3 = applicationContext.getBean(Bean3.class);
+		Bean6 bean6 = applicationContext.getBean(Bean6.class);
+//		MyFactoryBeanPojo bean7 = applicationContext.getBean(MyFactoryBeanPojo.class);
+//		Bean4 bean4 = applicationContext.getBean(Bean4.class);
+		Bean5 bean5 = applicationContext.getBean(Bean5.class);
+//		bean1.say();
 		bean2.say();
+//		bean3.say();
+//		bean4.say();
+		bean5.say();
+		bean6.say();
+//		bean7.say();
+
 
 	}
 

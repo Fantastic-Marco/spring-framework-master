@@ -1,6 +1,5 @@
 package org.springframework.reader.bean;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -11,16 +10,17 @@ import javax.annotation.PostConstruct;
  * @date 2020/12/8 下午10:02
  */
 @Component
-public class Bean1 implements IBean {
+public class Bean1 implements IBean{
 //	@Autowired
 //	private Bean2 bean;
 
-	@PostConstruct
-	public void afterInit(){
-		System.out.println("bean1 say I am good feeling after init");
-	}
+//	@PostConstruct
+//	public void afterInit(){
+//		System.out.println("bean1 say I am good feeling after init");
+//	}
 
 	@Override
+	@PostConstruct
 	public void say() {
 		System.out.println("bean1 say fuck");
 	}

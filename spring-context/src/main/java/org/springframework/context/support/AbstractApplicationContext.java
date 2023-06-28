@@ -577,7 +577,7 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 
 				// Register bean processors that intercept bean creation.
 				/**
-				 * 方法内主要是注册BeanPostProcesser的实现类，AOP是在这里被注册的
+				 * 方法内主要是注册BeanPostProcessor的实现类，AOP是在这里被注册的
 				 * 注册顺序：
 				 * ①实现PriorityOrdered接口
 				 *
@@ -781,6 +781,7 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 	 * Instantiate and invoke all registered BeanFactoryPostProcessor beans,
 	 * respecting explicit order if given.
 	 * <p>Must be called before singleton instantiation.
+	 * 实例化并调用所有注册的 BeanFactoryPostProcessor bean，尊重给定的显式顺序。必须在单例实例化之前调用。
 	 */
 	protected void invokeBeanFactoryPostProcessors(ConfigurableListableBeanFactory beanFactory) {
 		PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(beanFactory, getBeanFactoryPostProcessors());
